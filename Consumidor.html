@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Procon-PB Não Pertube</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/icon.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+
+</head>
+<body class="gray">
+  <div style="width:400px; margin:0 auto;">
+    <h2 style="color: green;"><i class="user icon"></i>Cadastro do Consumidor</h2>
+    <div class="ui divider"></div>
+
+    <form class="ui form" name="consumidor" action="insertTrigger.php" method="post">
+      <!-- $this->cn_nome=$this->hookup->real_escape_string($_POST['cn_nome']);
+  		$this->cn_email=$this->hookup->real_escape_string($_POST['cn_email']);
+  		$this->cn_telb1=$this->hookup->real_escape_string($_POST['cn_telb1']);
+  		$this->cn_telb2=$this->hookup->real_escape_string($_POST['cn_telb2']);
+  		$this->cn_telb3=$this->hookup->real_escape_string($_POST['cn_telb3']);
+  		$this->cn_telb4=$this->hookup->real_escape_string($_POST['cn_telb4']);
+  		$this->cn_bltmk=$this->hookup->real_escape_string($_POST['cn_bltmk']); -->
+      <div class="field">
+        <label>Consumidor</label>
+        <input type="text" name="cn_nome" placeholder="Nome">
+      </div>
+
+      <div class="field">
+        <label>E-mail</label>
+        <input type="email" name="cn_email" placeholder="E-mail">
+      </div>
+
+      <div class="field">
+        <label>Telefone 1</label>
+        <input type="text" name="cn_telb1" placeholder="Número do telefone para bloqueio">
+      </div>
+      <div class="field">
+        <label>Telefone 2</label>
+        <input type="text" name="cn_telb2" placeholder="Número do telefone para bloqueio">
+      </div>
+      <div class="field">
+        <label>Telefone 3</label>
+        <input type="text" name="cn_telb3" placeholder="Número do telefone para bloqueio">
+      </div>
+      <div class="field">
+        <label>Telefone 4</label>
+        <input type="text" name="cn_telb4" placeholder="Número do telefone para bloqueio">
+      </div>
+      <div class="inline field">
+          <div class="ui checkbox">
+            <input type="checkbox" value="1" checked="1" name="cn_bltmkval[]">
+            <label>Desejo adicionar meus telefones a lista de bloqueio.</label>
+          </div>
+        </div>
+      <button class="ui blue button" type="submit" value="Create Profile" name="sender"><i class="check green icon"></i>Cadastrar</button>
+
+      <!-- <input type="submit" value="Cadastrar" name="sender"> -->
+
+
+    </form>
+    <div class="ui divider"></div>
+  </div>
+  <script type="text/javascript" src="assets/js/semantic.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+
+</body>
+</html>
