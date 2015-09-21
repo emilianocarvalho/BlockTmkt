@@ -1,6 +1,6 @@
 <?php
-class Client 
-{		
+class Client
+{
 	public function insertData()
 	{
 		$secure=new SecureData();
@@ -8,7 +8,7 @@ class Client
 		$secure->enterData();
 		$context->algorithm($secure->setEntry());
 	}
-	
+
 	public function findData()
 	{
 		$secure=new SecureData();
@@ -16,23 +16,23 @@ class Client
 		$secure->conductSearch();
 		$context->algorithm($secure->setEntry());
 	}
-	
+
 	public function showAll()
 	{
 		$dummy=array(0);
 		$context=new Context(new DisplayAll());
 		$context->algorithm($dummy);
 	}
-	
+
 	public function changeData()
 	{
 		$secure=new SecureData();
 		$context=new Context(new UpdateData());
 		$secure->makeChange();
 		$context->algorithm($secure->setEntry());
-		
+
 	}
-	
+
 	public function killer()
 	{
 		$secure=new SecureData();

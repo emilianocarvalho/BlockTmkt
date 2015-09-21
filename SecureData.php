@@ -52,6 +52,10 @@ class SecureData
 		);
 
 		$this->hookup->close();
+
+		return $this->retPage();
+
+		//header("location:Consumidor.html");
 	}
 
 	public function conductSearch()
@@ -92,6 +96,22 @@ class SecureData
 	public function setEntry()
 	{
 		return $this->dataPack;
+	}
+
+	public function retPage()
+	{
+		/* Do work */
+		echo "Retornou";
+		echo $_SERVER['HTTP_REFERER'];
+		if(isset($_SERVER['HTTP_REFERER'])){
+			header("Location: {$_SERVER['HTTP_REFERER']}");
+		}	else if(isset($_REQUEST['destination'])){
+			header("Location: {$_REQUEST['destination']}");
+		}else{
+			/* some fallback, maybe redirect to index.php */
+		};
+		$msg = "realizado";
+		return $msg;
 	}
 }
 ?>

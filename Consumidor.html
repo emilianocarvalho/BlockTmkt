@@ -10,11 +10,15 @@
 
 </head>
 <body class="gray">
+
   <div style="width:400px; margin:0 auto;">
+<div class="ui hidden divider"></div>
     <h2 style="color: green;"><i class="user icon"></i>Cadastro do Consumidor</h2>
     <div class="ui divider"></div>
 
     <form class="ui form" name="consumidor" action="insertTrigger.php" method="post">
+      <h4 class="ui dividing header">Informe seus dados para o bloqueio</h4>
+      <input type="hidden" name="destination" value="<?php echo $_SERVER['REQUEST_URI']; ?>"/>
       <!-- $this->cn_nome=$this->hookup->real_escape_string($_POST['cn_nome']);
   		$this->cn_email=$this->hookup->real_escape_string($_POST['cn_email']);
   		$this->cn_telb1=$this->hookup->real_escape_string($_POST['cn_telb1']);
@@ -50,7 +54,7 @@
       </div>
       <div class="inline field">
           <div class="ui checkbox">
-            <input type="checkbox" value="1" checked="1" name="cn_bltmkval[]">
+            <input type="checkbox" value="1" checked="1" name="bloq[]">
             <label>Desejo adicionar meus telefones a lista de bloqueio.</label>
           </div>
         </div>

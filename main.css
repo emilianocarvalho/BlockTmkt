@@ -3,8 +3,23 @@
 /*B2B2B2,B2A1A1,666666,8FB299*/
 body
 {
-  color:#fff;
-	background-color:#B2B2B2;
+  color:#000;
+	background-color:#fff;
 
 	font-family:Verdana, Geneva, sans-serif
+}
+
+#paragraph .paragraph {
+  margin: 2em 0em;
+  padding: 2em 0em;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cinema {
+  font-size: 12px;
+}
+
+span .hidden {
+
 }
