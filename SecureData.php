@@ -1,4 +1,5 @@
 <?php
+//require_once()
 /* Define o local para Holandês(usar pt_BR para o Português(Brasil) ) */
 setlocale (LC_ALL, 'pt_BR');
 //Helper class
@@ -30,6 +31,10 @@ class SecureData
 
 	public function enterData()
 	{
+		/*
+		* verifica se já existe
+		*/
+
 		$this->hookup=UniversalConnect::doConnect();
 		$this->cn_nome=$this->hookup->real_escape_string($_POST['cn_nome']);
 		$this->cn_email=$this->hookup->real_escape_string($_POST['cn_email']);
@@ -68,7 +73,7 @@ class SecureData
 		$this->dataPack=array(
 			$this->field,
 			$this->term
-			);
+		);
 		$this->hookup->close();
 		$this->retPage();
 	}
@@ -83,7 +88,7 @@ class SecureData
 			$this->changeField,
 			$this->oldData,
 			$this->newData
-			);
+		);
 		$this->hookup->close();
 		$this->retPage();
 	}

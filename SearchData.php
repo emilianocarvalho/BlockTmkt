@@ -1,12 +1,12 @@
 <?php
 //SearchData.php
 class SearchData implements IStrategy
-{	
+{
 	private $tableMaster;
 	private $dataPack;
 	private $hookup;
 	private $sql;
-	
+
 	public function algorithm(Array $dataPack)
 	{
 		$this->tableMaster=IStrategy::TABLENOW;
@@ -16,6 +16,7 @@ class SearchData implements IStrategy
 		$term=$this->dataPack[1];
 		$this->sql = "SELECT * FROM $this->tableMaster WHERE $field='$term'";
 		//Conditional statement in MySQL query for data output
+		$ret = $this->hookup->query($this->sql);
 		if ($result = $this->hookup->query($this->sql))
 		{
 			echo "<link rel='stylesheet' href='main.css'>";
@@ -28,11 +29,12 @@ class SearchData implements IStrategy
 					echo "<td>$cell</td>";
 				}
 				echo "</tr>";
+			}
+			echo "</table>";
+			$result->close();
 		}
-		echo "</table>";
-    	$result->close();
+		$this->hookup->close();
+		return $ret;
 	}
-	$this->hookup->close();	
-	}	
 }
 ?>

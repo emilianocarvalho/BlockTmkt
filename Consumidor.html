@@ -13,7 +13,7 @@
     var texto = mascara.substring(i)
 
     if (texto.substring(0,1) != saida){
-              documento.value += texto.substring(0,1);
+      documento.value += texto.substring(0,1);
     }
 
   }
@@ -22,8 +22,28 @@
 </head>
 <body class="gray">
 
-  <div style="width:400px; margin:0 auto;">
-<div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div class="ui container">
+      <div class="paragraph">
+
+        <h1 class="ui dividing header">
+          Cadastro Não Pertube
+        </h1>
+        <div class="sub header">
+
+          O cadastro "NÃO PERTUBE" tem por objetivo impedir que as empresas de
+          telemarketing, ou estabelecimentos que utilizam deste serviço, efetuem
+          ligações telefônicas não autorizadas para os usuários nele inscritos.
+        </div>
+
+      </div>
+
+      <h3 class="ui header">Telemarketing - Bloqueio </h3>
+      <div class="sub header">
+        Preencha corretamente seus dados.
+      </div>
+    <div class="ui hidden divider"></div>
+    <div style="width:400px; margin:0 auto;">
     <h2>Cadastro do Consumidor</h2>
     <div class="ui hidden divider"></div>
 
@@ -57,11 +77,11 @@
         <input pattern="^\d{2}-\d{5}-\d{4}$" type="tel" name="cn_telb4" placeholder="Número do telefone. (xx-xxxxx-xxxx)" maxlength="13" OnKeyPress="mask('##-#####-####', this)">
       </div>
       <div class="inline field">
-          <div class="ui checkbox">
-            <input type="checkbox" value="1" checked="1" name="bloq[]">
-            <label>Desejo adicionar meus telefones a lista de bloqueio.</label>
-          </div>
+        <div class="ui checkbox">
+          <input type="checkbox" value="1" checked="1" name="bloq[]">
+          <label>Desejo adicionar meus telefones a lista de bloqueio.</label>
         </div>
+      </div>
       <button class="ui blue button" type="submit" value="Cadastrar" name="sender"><i class="check green icon"></i>Cadastrar</button>
 
       <!-- <input type="submit" value="Cadastrar" name="sender"> -->

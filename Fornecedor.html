@@ -10,12 +10,40 @@
 
 </head>
 <body class="gray">
+  <div class="ui hidden divider"></div>
+  <div class="ui container">
+    <div class="paragraph">
+
+      <h1 class="ui dividing header">
+        Cadastro Não Pertube
+      </h1>
+      <div class="sub header">
+
+        O cadastro "NÃO PERTUBE" tem por objetivo impedir que as empresas de
+        telemarketing, ou estabelecimentos que utilizam deste serviço, efetuem
+        ligações telefônicas não autorizadas para os usuários nele inscritos.
+      </div>
+
+    </div>
+
+    <h3 class="ui header">Telemarketing - Bloqueio </h3>
+    <div class="sub header">
+      Preencha corretamente seus dados.
+    </div>
+  <div class="ui hidden divider"></div>
 
   <div style="width:400px; margin:0 auto;">
 <div class="ui hidden divider"></div>
     <h2>Cadastro do Fornecedor</h2>
     <div class="ui hidden divider"></div>
-    
+
+    <h2>Listagem</h2>
+    <h3>&nbsp;Imprimir listagem</h3>
+    <form class="ui form" name="allData" action="displayTrigger.php" method="post">
+      <!-- <input type="submit" value="Display Data" name="display"> -->
+      <button class="ui blue button" type="submit" value="Display Data" name="sender"><i class="check green icon"></i>Listar</button>
+    </form>
+
 
     <form class="ui form" name="consumidor" action="insertTrigger.php" method="post">
       <h4 class="ui dividing header">Dados</h4>
