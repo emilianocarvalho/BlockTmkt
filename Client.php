@@ -1,4 +1,7 @@
 <?php
+/* Define o local para Holandês(usar pt_BR para o Português(Brasil) ) */
+setlocale (LC_ALL, 'pt_BR');
+
 class Client
 {
 	public function insertData()

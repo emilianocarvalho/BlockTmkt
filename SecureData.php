@@ -1,4 +1,6 @@
 <?php
+/* Define o local para Holandês(usar pt_BR para o Português(Brasil) ) */
+setlocale (LC_ALL, 'pt_BR');
 //Helper class
 //SecureData.php
 class SecureData
@@ -53,7 +55,7 @@ class SecureData
 
 		$this->hookup->close();
 
-		return $this->retPage();
+		$this->retPage();
 
 		//header("location:Consumidor.html");
 	}
@@ -68,6 +70,7 @@ class SecureData
 			$this->term
 			);
 		$this->hookup->close();
+		$this->retPage();
 	}
 
 	public function makeChange()
@@ -82,6 +85,7 @@ class SecureData
 			$this->newData
 			);
 		$this->hookup->close();
+		$this->retPage();
 	}
 
 	public function removeRecord()
@@ -90,6 +94,7 @@ class SecureData
 		$this->disappear=$this->hookup->real_escape_string($_POST['delete']);
 		$this->dataPack=array($this->disappear);
 		$this->hookup->close();
+		$this->retPage();
 	}
 
 	//Returns secure data as array to requesting Client
@@ -101,10 +106,9 @@ class SecureData
 	public function retPage()
 	{
 		/* Do work */
-		echo "Retornou";
-		echo $_SERVER['HTTP_REFERER'];
 		if(isset($_SERVER['HTTP_REFERER'])){
-			header("Location: {$_SERVER['HTTP_REFERER']}");
+			header("Location: http://www.srv-tmkt.app/");
+			// header("Location: {$_SERVER['HTTP_REFERER']}");
 		}	else if(isset($_REQUEST['destination'])){
 			header("Location: {$_REQUEST['destination']}");
 		}else{

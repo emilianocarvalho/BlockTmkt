@@ -15,7 +15,18 @@ body
   position: relative;
   -webkit-tap-highlight-color: transparent;
 }
-
+a:link, a:visited {
+  color:#fff;
+	text-decoration: none
+	}
+a:hover {
+  color:#fff;
+	text-decoration: none;
+	}
+a:active {
+  color:#fff;
+	text-decoration: none
+}
 .cinema {
   font-size: 12px;
 }

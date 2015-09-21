@@ -1,56 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Procon-PB Não Pertube</title>
   <link rel="stylesheet" type="text/css" href="assets/css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/icon.min.css">
   <link rel="stylesheet" type="text/css" href="main.css">
+  <script>
+  function mask(mascara, documento){
+    var i = documento.value.length;
+    var saida = mascara.substring(0,1);
+    var texto = mascara.substring(i)
 
+    if (texto.substring(0,1) != saida){
+              documento.value += texto.substring(0,1);
+    }
+
+  }
+  </script>
 
 </head>
 <body class="gray">
 
   <div style="width:400px; margin:0 auto;">
 <div class="ui hidden divider"></div>
-    <h2 style="color: green;"><i class="user icon"></i>Cadastro do Consumidor</h2>
-    <div class="ui divider"></div>
+    <h2>Cadastro do Consumidor</h2>
+    <div class="ui hidden divider"></div>
 
-    <form class="ui form" name="consumidor" action="insertTrigger.php" method="post">
+    <form lang="pt_BR" class="ui form" name="consumidor" action="insertTrigger.php" method="post">
       <h4 class="ui dividing header">Informe seus dados para o bloqueio</h4>
       <input type="hidden" name="destination" value="<?php echo $_SERVER['REQUEST_URI']; ?>"/>
-      <!-- $this->cn_nome=$this->hookup->real_escape_string($_POST['cn_nome']);
-  		$this->cn_email=$this->hookup->real_escape_string($_POST['cn_email']);
-  		$this->cn_telb1=$this->hookup->real_escape_string($_POST['cn_telb1']);
-  		$this->cn_telb2=$this->hookup->real_escape_string($_POST['cn_telb2']);
-  		$this->cn_telb3=$this->hookup->real_escape_string($_POST['cn_telb3']);
-  		$this->cn_telb4=$this->hookup->real_escape_string($_POST['cn_telb4']);
-  		$this->cn_bltmk=$this->hookup->real_escape_string($_POST['cn_bltmk']); -->
       <div class="field">
-        <label>Consumidor</label>
-        <input type="text" name="cn_nome" placeholder="Nome">
+        <label>Consumidor<i class="blue mini asterisk icon"></i></label>
+        <input type="text" name="cn_nome" placeholder="Nome" required>
       </div>
 
       <div class="field">
-        <label>E-mail</label>
-        <input type="email" name="cn_email" placeholder="E-mail">
+        <label>E-mail<i class="blue mini asterisk icon"></i></label>
+        <input type="email" name="cn_email" placeholder="E-mail" required>
       </div>
 
       <div class="field">
-        <label>Telefone 1</label>
-        <input type="text" name="cn_telb1" placeholder="Número do telefone para bloqueio">
+        <label>Telefone 1<i class="blue mini asterisk icon"></i></label>
+        <input pattern="^\d{2}-\d{5}-\d{4}$" type="tel" name="cn_telb1" placeholder="Número do telefone. (xx-xxxxx-xxxx)" maxlength="13" OnKeyPress="mask('##-#####-####', this)" required>
       </div>
       <div class="field">
         <label>Telefone 2</label>
-        <input type="text" name="cn_telb2" placeholder="Número do telefone para bloqueio">
+        <input pattern="^\d{2}-\d{5}-\d{4}$" type="tel" name="cn_telb2" placeholder="Número do telefone. (xx-xxxxx-xxxx)" maxlength="13" OnKeyPress="mask('##-#####-####', this)">
       </div>
       <div class="field">
         <label>Telefone 3</label>
-        <input type="text" name="cn_telb3" placeholder="Número do telefone para bloqueio">
+        <input pattern="^\d{2}-\d{5}-\d{4}$" type="tel" name="cn_telb3" placeholder="Número do telefone. (xx-xxxxx-xxxx)" maxlength="13" OnKeyPress="mask('##-#####-####', this)">
       </div>
       <div class="field">
         <label>Telefone 4</label>
-        <input type="text" name="cn_telb4" placeholder="Número do telefone para bloqueio">
+        <input pattern="^\d{2}-\d{5}-\d{4}$" type="tel" name="cn_telb4" placeholder="Número do telefone. (xx-xxxxx-xxxx)" maxlength="13" OnKeyPress="mask('##-#####-####', this)">
       </div>
       <div class="inline field">
           <div class="ui checkbox">
@@ -58,7 +62,7 @@
             <label>Desejo adicionar meus telefones a lista de bloqueio.</label>
           </div>
         </div>
-      <button class="ui blue button" type="submit" value="Create Profile" name="sender"><i class="check green icon"></i>Cadastrar</button>
+      <button class="ui blue button" type="submit" value="Cadastrar" name="sender"><i class="check green icon"></i>Cadastrar</button>
 
       <!-- <input type="submit" value="Cadastrar" name="sender"> -->
 
